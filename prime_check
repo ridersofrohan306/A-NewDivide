@@ -1,0 +1,8 @@
+function primeresult= prime_check(divisor)
+primeresult=1;
+for i=2:1:(divisor/2)
+    if(divide_by_sub(divisor,i)==0)
+        primeresult=0;
+    end
+end
+end
