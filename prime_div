@@ -1,0 +1,26 @@
+%%Call this function using main funation for prime division
+function result=prime_div(dividend,divisor)
+
+k=0;
+prev_result=dividend;
+if(prev_result<divisor)
+    result=prev_result;
+else
+    while(true)
+result=0;
+k0=prev_result;
+while(k0~=0)
+    result=result+divide_by_sub(k0,10)*divide_by_sub((10.^k),divisor);%Also try using divide_by_floor
+     k0=(k0-divide_by_sub(k0,10))/10;
+    k=k+1;
+end
+if(result==prev_result)
+    break;
+else
+    prev_result=result;
+    k=0;
+end
+    end
+result=divide_by_sub(result,divisor);
+end
+end
