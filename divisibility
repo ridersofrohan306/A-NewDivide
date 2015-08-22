@@ -1,0 +1,40 @@
+function flag = divisibility(dividend,divisor)
+flag=1;
+factors=1;
+num_fac=1;
+if(prime_check(divisor)==1)
+    flag=prime_div(dividend,divisor);
+    
+elseif(prime_check(divisor)==0)
+    i=2;
+    a=dividend;
+    b=divisor;
+    while(b>1)
+        if(prime_div(b,i)==0)
+            if(prime_div(a,i)==0)
+                a=a/i;
+                b=b/i;
+                factors=[factors i];
+                num_fac=num_fac+1;
+                flag=0;
+            else
+                flag=1;
+                break;
+            end
+        else
+            while(true)
+            i=i+1;
+            if(prime_check(i)==1)
+                break;
+            end
+            end
+        end
+      
+    end
+    flag=divide_by_sub(a,b);
+    for i=1:num_fac
+        flag=flag*factors(i);
+    end
+end
+    
+end
