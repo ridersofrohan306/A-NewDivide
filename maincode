@@ -1,0 +1,38 @@
+dividend=input('Enter the dividend   ');
+divisor=input('Enter the divisor     ');
+tic
+if(divisibility(dividend,divisor)==0)
+    fprintf('Divisible');
+else
+    fprintf('Nah!! The remainder is');
+    r=divisibility(dividend,divisor);
+    disp(r);
+    fprintf('The neighbouring divisible numbers are-');
+    disp(dividend-r);
+    fprintf('and');
+    disp(dividend-r+divisor);
+    l=divisor-1;
+    h=divisor+1;
+    fprintf('Neighbouring divisors which divide the dividend completely is/are-');
+    ch=0;
+    while(ch==0)
+        if(divisibility(dividend,l)==0)
+            disp(l);
+            ch=1;
+        else
+            l=l-1;
+        end
+        
+    end
+    fprintf('and');
+    ch=0;
+    while(ch==0)
+    if(divisibility(dividend,h)==0)
+            disp(h);
+            ch=1;
+        else
+            h=h+1;
+    end
+    end
+end
+toc
